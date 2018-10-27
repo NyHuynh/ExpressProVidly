@@ -8,13 +8,14 @@ const users = require('./routes/users');
 const auth = require('./routes/auth');
 const app = express();
 
-if (!config.get('jwtPrivateKey')){
+/* if (!config.get('jwtPrivateKey')){
     console.error('FATAL ERROR: jwtPrivateKey is not defined.');
     process.exit(1);
-}
+} */
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/vidly')
+// mongoose.connect('mongodb://localhost/vidly')
+mongoose.connect('mongodb://nyhuynh:ny1234@ds048537.mlab.com:48537/nyhuynh')
     .then(()=>{console.log('Connected to MongoDB...')})
     .catch(error=>{console.error('Could not connect to MongoDB.')})
 
