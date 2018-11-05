@@ -1,3 +1,4 @@
+const Joi = require('joi');
 function validate(req){
     const schema = {
         email: Joi.string().min(5).max(255).required().email(),

@@ -16,7 +16,8 @@ var auth = {
         if(!validPassword) return res.status(400).send('Invalid email or password.');
     
         const token = user.generateAuthToken();
-        res.send(token);
+        res.header('x-auth-token', token).send('Login successfully!');
+        
     }
 };
 
